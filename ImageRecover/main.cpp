@@ -9,7 +9,7 @@
 #include <fstream>
 #include <iostream>
 
-#define s_max 5
+#define s_max 7
 
 using namespace std;
 using namespace cv;
@@ -46,8 +46,8 @@ double MLS(vector<node>nodes)
 		p[0][0] = 1;
 		p[1][0] = nodes[k].x;
 		p[2][0] = nodes[k].y;
-		p[3][0] = p[0][0] * p[0][0];
-		p[4][0] = p[1][0] * p[1][0];
+		p[3][0] = p[1][0] * p[1][0];
+		p[4][0] = p[1][0] * p[2][0];
 		p[5][0] = p[2][0] * p[2][0];
 		s = sqrt(nodes[k].x * nodes[k].x + nodes[k].y * nodes[k].y);
 		A += w(s / s_max) * p * p.t();
